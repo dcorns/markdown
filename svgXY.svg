@@ -17,8 +17,8 @@
    inkscape:version="0.91 r13725"
    sodipodi:docname="svgXY.svg"
    inkscape:export-filename="/data/Projects/markdown/svgXY.svg.png"
-   inkscape:export-xdpi="90"
-   inkscape:export-ydpi="90">
+   inkscape:export-xdpi="90.757423"
+   inkscape:export-ydpi="90.757423">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -29,7 +29,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="141.64474"
+     inkscape:cx="140.93045"
      inkscape:cy="162.84861"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -69,50 +69,77 @@
        id="rect3385"
        width="137.14285"
        height="31.428572"
-       x="52.285713"
-       y="811.505" />
+       x="140.28571"
+       y="879.505" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:25px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="20.85714"
-       y="983.79077"
+       x="40.85714"
+       y="1005.7908"
        id="text3391"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3393"
-         x="20.85714"
-         y="983.79077">&lt;rect y=10 x=10/&gt;</tspan></text>
+         x="40.85714"
+         y="1005.7908"
+         style="font-size:17.5px">&lt;rect y=&quot;50&quot; x=&quot;50&quot;/&gt;</tspan></text>
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 24.857143,810.79073 192.857147,0.71429"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.15306365px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 25.852168,878.79274 257.867102,0.71027"
        id="path3395"
        inkscape:connector-curvature="0" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 51.428571,775.93359 52.857143,946.6479"
+       d="m 138.42857,800.2193 1.42857,170.71431"
        id="path3397"
        inkscape:connector-curvature="0" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:25px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="10.714286"
-       y="816.64789"
+       y="884.64789"
        id="text3418"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3420"
          x="10.714286"
-         y="816.64789">x</tspan></text>
+         y="884.64789">x</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:25px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="42.285713"
-       y="774.07642"
+       x="130.28571"
+       y="790.07642"
        id="text3422"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3424"
-         x="42.285713"
-         y="774.07642">y</tspan></text>
+         x="130.28571"
+         y="790.07642">y</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:25px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="23.069614"
+       y="1036.6108"
+       id="text3391-2"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3393-9"
+         x="23.069614"
+         y="1036.6108">&lt;<tspan
+   style="font-size:17.5px"
+   id="tspan4828">circle cy=&quot;50&quot; cx=&quot;50&quot;</tspan>/&gt;</tspan></text>
+    <circle
+       style="opacity:1;fill:#000000;fill-opacity:1"
+       id="path3407"
+       cx="140.14285"
+       cy="879.505"
+       r="4.2857141" />
+    <ellipse
+       style="opacity:0.45;fill:#ff00ff;fill-opacity:1"
+       id="path4224"
+       cx="140.57144"
+       cy="879.64789"
+       rx="38.57143"
+       ry="30" />
   </g>
 </svg>
