@@ -1,5 +1,5 @@
 #Whats Behind the SVG viewBox?
-An article attempting to explain the SVG viewBox
+A tutorial on the SVG viewBox
 
 The viewBox is an attribute that we can add to our SVG to do some interesting things. A viewBox attribute has four parameters that can be separated by commas or spaces. They are min-x, min-y, width, and height. Lets explore how these settings effect our svg. If we use the following settings: ```viewBox="0 0 *svg-width* *svg-height*``` we will observe that the view box attribute has no effect on the way our svg looks. However, if we were to change the min-x and min-y values something interesting occurs. Lets say we had the following svg defined:
 
