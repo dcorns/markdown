@@ -28,6 +28,8 @@ You may want to drop this code into [jsBin](https://jsbin.com/yoyip/4/edit?html,
  
  ![image view box in virtual space](svgViewBoxPanner.svg.png)
  
+ **Figure A**
+ 
  Referring back to our JSBin example, what if we wanted to expand our window to include both of our circles simultaneously. We might try to merely increase the width and height of our viewBox to give us a larger view of our virtual space. Set min-y and min-x back to 0. Then set the viewBox height to 300. This will exposes the entire lower circle and also leave the upper circle exposed. But what happened to the position of the upper circle? We only changed the viewBox height and the upper circle appears to have moved to the right. That's not what we want. Why did the virtual space expand horizontally as well as vertically? It will be easier see what happens if we add a rectangle with the same dimensions as our SVG. Add the the following code as the last line inside of our SVG.
   
      <rect x="0" y="0" width="550" height="300"/>
@@ -43,13 +45,15 @@ You may want to drop this code into [jsBin](https://jsbin.com/yoyip/4/edit?html,
  
  A similar expansion occurs if we set the height of our viewBox to match the SVG and increase our viewBox width beyond the width of the SVG. Try it and you will see that the only difference in this case is that the anchor point with the left side of the SVG is maintained as the virtual space is expanded above, below and to the right. Consider the following images:
   
-  Our viewBox width and height match the width and height of the SVG.
+  In the image below our viewBox height and width match that of the SVG. The function is the same as when no width or height are specified for the viewBox. Notice how min-x and min-y values move the view box around within a larger virtual space. As you will see later, it is also important to note how the x and y values of the shape elements are mapped here within the SVG.
   
   ![image view box in virtual space](svgViewBoxOut1.svg.png)
   
-  Here we double the width of our viewBox height
+  **Figure B** The lower rectangle is not visible because its coordinates place it outside the window.
   
-  ![image view box in virtual space](svgViewBoxOut1.svg.png)
+  ![image view box in virtual space](svgViewBoxOut2.svg.png)
+  
+  **Figure C** The view box height is twice that of the SVG height. This illistration just shows part the viewBox.
  
  ###ViewBox Coordinates System
  Probably, the hardest thing to grasp about the view box is the coordinates system. In order to aid in our discourse regarding SVG coordinates I will use something I like to call codespeak ( *not urban dictionary flavor of codespeak* ). We decribe some terms and then define some relationships using symbols familiar to coders.
