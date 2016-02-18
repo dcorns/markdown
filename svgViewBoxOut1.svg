@@ -18,9 +18,21 @@
    sodipodi:docname="svgViewBoxOut1.svg"
    inkscape:export-filename="/data/Projects/markdown/svgViewBoxOut1.svg.png"
    inkscape:export-xdpi="90.757423"
-   inkscape:export-ydpi="90.757423">
+   inkscape:export-ydpi="90.757423"
+   enable-background="new">
   <defs
-     id="defs4" />
+     id="defs4">
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter4469">
+      <feBlend
+         inkscape:collect="always"
+         mode="lighten"
+         in2="BackgroundImage"
+         id="feBlend4471" />
+    </filter>
+  </defs>
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -29,7 +41,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4142136"
-     inkscape:cx="137.37365"
+     inkscape:cx="261.11733"
      inkscape:cy="134.9765"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -49,7 +61,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -57,7 +69,8 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-752.36216)">
+     transform="translate(0,-752.36216)"
+     style="filter:url(#filter4469)">
     <rect
        style="opacity:0.3;fill:#0000ff;fill-opacity:1"
        id="rect3340"
@@ -742,19 +755,20 @@
          x="63.63961"
          y="738.05322" /></text>
     <rect
-       style="opacity:1;fill:#f4000a;fill-opacity:1;stroke:#dd0d0d;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#f4000a;fill-opacity:1;stroke:#dd0d0d;stroke-width:1.94165373;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect4426"
-       width="100"
-       height="50"
-       x="70"
-       y="804" />
+       width="98.058342"
+       height="48.058346"
+       x="-167.77917"
+       y="803.97083"
+       transform="scale(-1,1)" />
     <rect
-       style="opacity:1;fill:#f4000a;fill-opacity:1;stroke:#dd0d0d;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#f4000a;fill-opacity:1;stroke:#dd0d0d;stroke-width:1.94165337;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect4432"
-       width="50"
-       height="100"
-       x="170"
-       y="904" />
+       width="48.058346"
+       height="98.05835"
+       x="169.97083"
+       y="905.97083" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"

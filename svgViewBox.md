@@ -45,7 +45,7 @@ You may want to drop this code into [jsBin](https://jsbin.com/yoyip/4/edit?html,
  
  A similar expansion occurs if we set the height of our viewBox to match the SVG and increase our viewBox width beyond the width of the SVG. Try it and you will see that the only difference in this case is that the anchor point with the left side of the SVG is maintained as the virtual space is expanded above, below and to the right. Consider the following images:
   
-  In the image below our viewBox height and width match that of the SVG. The function is the same as when no width or height are specified for the viewBox. Notice how min-x and min-y values move the view box around within a larger virtual space. As you will see later, it is also important to note how the x and y values of the shape elements are mapped here within the SVG.
+  In the image below our viewBox height and width match that of the SVG. Notice how min-x and min-y values move the view box around within a larger virtual space. As you will see later, it is also important to note how the x and y values of the shape elements are mapped here within the SVG.
   
   ![image view box in virtual space](svgViewBoxOut1.svg.png)
   
@@ -53,10 +53,10 @@ You may want to drop this code into [jsBin](https://jsbin.com/yoyip/4/edit?html,
   
   ![image view box in virtual space](svgViewBoxOut2.svg.png)
   
-  **Figure C** The view box height is twice that of the SVG height. This illistration just shows part the viewBox.
- 
- ###ViewBox Coordinates System
- Probably, the hardest thing to grasp about the view box is the coordinates system. In order to aid in our discourse regarding SVG coordinates I will use something I like to call codespeak ( *not urban dictionary flavor of codespeak* ). We decribe some terms and then define some relationships using symbols familiar to coders.
+  **Figure C** The view box height is twice that of the SVG height. All other settings unchanged. Making the lower rectangle visible even though its position values have not been changed.
+  
+###ViewBox Coordinates System
+Probably, the hardest thing to grasp about the view box is the coordinates system. In order to aid in our discourse regarding SVG coordinates I will use something I like to call codespeak ( *not urban dictionary flavor of codespeak* ). We decribe some terms and then define some relationships using symbols familiar to coders.
  
      LET Wsvg = SVG width attribute value
      LET Hsvg = SVG height attribute value
