@@ -56,7 +56,7 @@ You may want to drop this code into [jsBin](https://jsbin.com/yoyip/4/edit?html,
   **Figure C** The view box height is twice that of the SVG height. All other settings unchanged. Making the lower rectangle visible even though its position values have not been changed.
   
 ###ViewBox Coordinates System
-Probably, the hardest thing to grasp about the view box is the coordinates system. In order to aid in our discourse regarding SVG coordinates I will use something I like to call codespeak ( *not urban dictionary flavor of codespeak* ). We decribe some terms and then define some relationships using symbols familiar to coders.
+Probably, the hardest thing to grasp about the view box is the coordinates system. In order to aid in our discourse regarding SVG coordinates I will use something I like to call codespeak ( *not urban dictionary flavor of codespeak* ). We describe some terms and then define some relationships using symbols familiar to coders. Using the relationships we can describe some rules to aid us in understanding the coordinates and ultimately obtaining the desired results for the placement and scaling of our graphics.
  
      LET Wsvg = SVG width attribute value
      LET Hsvg = SVG height attribute value
@@ -77,18 +77,23 @@ Probably, the hardest thing to grasp about the view box is the coordinates syste
        VSy(-) = -((Hsvg/Wsvg) * (Wvb - Wsvg))/2 &&
        VSy(+) = ((Hsvg/Wsvg) * (Wvb - Wsvg))/2
        
-       
+     Rule 1  
      IF Wsvg/Hsvg = Wvb/Hvb THEN
        VSy(+) = Hvb && VSy(-) = 0 && VSx(+) = Wvb && VSx(-) = 0
-       
+     Rule 2  
      IF Wsvg/Hsvg > Wvb/Hvb THEN
        VSy(-) = 0 && VSy(+) = Hvb && VSx(-) = ((Wsvg/Hsvg - Wvb/Hvb) * Hvb)/2
-       
+     Rule 3  
      IF Wsvg/Hsvg < Wvb/Hvb THEN
        VSx(-) = 0 && VSx(+) = Wvb && VSy(-) = ((Hsvg/Wsvg - Hvb-Wvb) * Wvb)/2
-       
- 
- 
+    
+The first thing to recognize about the coordinates system with SVG's is that it is not a coordinates system. It is the coordinates system**s**. The first coordinates system is that of the outer SVG and the second is the coordinates of the viewBox. I suppose we could refer more coordinates systems within systems as we nest SVG elements but I think it is best to leave that out of this tutorial. So for our purposes we are concerned with just one outer SVG and the coordinates of this system refer only to the placement of the elements that it contains within virtual space. So we can say that the outer SVG coordinates system maps to our virtual space. Referring back to our figures, we can see the lower left quadrant of the SVG coordinates system. But we do have four full quadrants of virtual space in which to place our child SVG's.
+
+####Which way is up? 
+Positive values of X extend to the right of the Y axis as is normal. However, positive values of Y extend below the X axis which departs from what we would expect in a four quadrant system. Normally positive values for Y would be found above the X axis. This might not be a big deal if our coordinates never extended above the X axis, but the coordinates do extend above the X axis as well as to the left of the Y axis. So our negative values of Y extend above the X access and our negative values for X extend to the left of the Y axis as expected.
+
+####Where is the middle?
+To further complicate things, when our view box comes along, the middle of our coordinates system (0,0) can be placed anywhere. Where it exists is dependent on the placement of the view within the SVG. So while our outer SVG coordinates system is fixed. Our viewBox system is movable. It is our understanding of this movement that is key to mastering the coordinates systems. Initially (0,0) of our view box is at the same spot as its SVG.
  
  
   preserveAspectRatio
