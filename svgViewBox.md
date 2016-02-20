@@ -93,7 +93,29 @@ The first thing to recognize about the coordinates system with SVG's is that it 
 Positive values of X extend to the right of the Y axis as is normal. However, positive values of Y extend below the X axis which departs from what we would expect in a four quadrant system. Normally positive values for Y would be found above the X axis. This might not be a big deal if our coordinates never extended above the X axis, but the coordinates do extend above the X axis as well as to the left of the Y axis. So our negative values of Y extend above the X access and our negative values for X extend to the left of the Y axis as expected.
 
 ####Where is the middle?
-To further complicate things, when our view box comes along, the middle of our coordinates system (0,0) can be placed anywhere. Where it exists is dependent on the placement of the view within the SVG. Additionally, while the outer SVG coordinates may seem to be fixed in place, they can change as well. The outer SVG width and height settings set the height change the maximum size of our view port into virtual space. If we change it, it will definitely change the coordinates of the view box because it changes how much virtual space is can be displayed. While it always defines the upper left corner of this space, if we change the size, where that left corner exist in virtual space will change. Our viewBox system is movable. It is our understanding of this movement that is key to mastering the coordinates systems. Recall that when our viewBox min-x and min-y properties are set to 0 (or not specified at all) and the height and width are set the same as the SVG, the viewBox reveals the virtual space from the top left corner of the SVG to the right width number of units and down for height number of units.
+To further complicate things, when our view box comes along, the middle of our coordinates system (0,0) can be placed anywhere. Where it exists is dependent on the placement of the view within the SVG.
+
+#####Virtual Space Center
+When we define our outer SVG, the intersection of virtual X and Y access is fixed so with regards to virtual space, the center of our coordinates always refers back to the upper left corner of the SVG as specified by the width and height attributes. Remember, however that positive points on the Y access exist below the X axis and not above it. See the quadrants of the virtual space illustrated below.
+
+ ![image view box in virtual space](svgVirtualCoords.svg.png)
+  
+  **Figure D** Virtual coordinates XY intersection fixed by the upper left corner of the outer SVG
+
+The virtual coordinates center will not change, so we can safely add and manipulate all our svg elements within the parent with confidence that the spacial relationships will remain consistent. Since the specific values of width and height for our parent SVG only refer to our window into virtual space and how much space the SVG uses on the page, they do not affect the position of virtual (0,0). All that matters, is that width an height values greater than 0 exist. Of course it does not matter what we have in virtual space if we can not see it, so unless we can make the outer SVG large enough to contain all of the virtual space, we are going to need the viewBox.
+
+#####viewBox Coordinates Center (0,0)
+
+Our viewBox system is movable. It is our understanding of this movement that is key to mastering the coordinates systems. Recall that when our viewBox min-x and min-y properties are set to 0 (or not specified at all) and the height and width are set the same as the SVG, the viewBox reveals the virtual space from the top left corner of the SVG to the right width number of units and down for height number of units. At these settings our viewBox coordinates are setting right on top of our virtual space coordinates as illustrated in figure D above. We all so learned that if the width and height of our view box are equal to the SVG, we can use the min-y and min-x properties of the view box to pan our view of virtual space at scale. With these settings our view box takes control of the position within virtual space of our SVG. Our viewBox coordinates are shifted by the values of min-x and min-y and it takes the outer SVG with it as illustrated below.
+
+![image view box in virtual space](svgViewBoxCoords1.svg.png)
+  
+  **Figure E** Centering the ViewPort in virtual space by setting the viewBox properties using the formulas min-x = -(Wsvg/2) and min-y = -(Hsvg/2)
+ 
+As illustrated above, the viewBox min-x and min-y settings refer to the point within virtual space to which the upper left corner of the SVG is anchored. So we can see that the center point for the viewBox coordinates resides at Virtual space center plus the offset provided by the min-x and min-y attributes, if they exist. We can represent this as ```vb(0,0) = vs(0,0) + (min-x, min-y)```. Ok, that's pretty easy. Now for the trickier stuff. 
+ 
+###Manipulating viewBox coordinates
+It is not until we start changing the one to one relationship between SVG width/height and viewBox width/height that cause manipulations to the viewBox coordinates system.
  
  
   preserveAspectRatio
