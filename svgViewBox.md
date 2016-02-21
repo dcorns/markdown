@@ -115,7 +115,7 @@ Our viewBox system is movable. It is our understanding of this movement that is 
 As illustrated above, the viewBox min-x and min-y settings refer to the point within virtual space to which the upper left corner of the SVG is anchored. So we can see that the center point for the viewBox coordinates resides at Virtual space center plus the offset provided by the min-x and min-y attributes, if they exist. We can represent this as ```vb(0,0) = vs(0,0) + (min-x, min-y)```. Ok, that's pretty easy. Now for the trickier stuff. 
  
 ###Manipulating viewBox coordinates
-It is not until we start changing the one to one relationship between SVG width/height and viewBox width/height that cause manipulations to the viewBox coordinates system.
+It is not until we start changing the one to one relationship between SVG width/height and viewBox width/height that cause manipulations to the viewBox coordinates system. Lets say we increase the ratio of our viewBox width/height to twice that of the SVG width/height.
  
  
   preserveAspectRatio
