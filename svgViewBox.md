@@ -33,7 +33,7 @@ You may want to drop this code into [jsBin](https://jsbin.com/yoyip/4/edit?html,
  Referring back to our JSBin example, what if we wanted to expand our window to include both of our circles simultaneously. We might try to merely increase the width and height of our viewBox to give us a larger view of our virtual space. Set min-y and min-x back to 0. Then set the viewBox height to 300. This will exposes the entire lower circle and also leave the upper circle exposed. But what happened to the position of the upper circle? We only changed the viewBox height and the upper circle appears to have moved to the right. That's not what we want. Why did the virtual space expand horizontally as well as vertically? It will be easier see what happens if we add a rectangle with the same dimensions as our SVG. Add the the following code as the last line inside of our SVG.
   
      <rect x="0" y="0" width="550" height="300"/>
- Let's also set our second circle coordinates back to their original settings. Our SVG should now look like this:
+ Let's also modify our second circle coordinates. Our SVG should now look like this:
  
     <svg width="550" height="300" viewBox="0 0 550 300">
         <circle fill="#231670" cx="50" cy="50" r="50"/>
@@ -56,7 +56,7 @@ You may want to drop this code into [jsBin](https://jsbin.com/yoyip/4/edit?html,
   **Figure C** The view box height is twice that of the SVG height. All other settings unchanged. Making the lower rectangle visible even though its position values have not been changed.
   
 ###ViewBox Coordinates System
-Probably, the hardest thing to grasp about the view box is the coordinates system. In order to aid in our discourse regarding SVG coordinates I will use something I like to call codespeak ( *not urban dictionary flavor of codespeak* ). We describe some terms and then define some relationships using symbols familiar to coders. Using the relationships we can describe some rules to aid us in understanding the coordinates and ultimately obtaining the desired results for the placement and scaling of our graphics.
+Probably, the hardest thing to grasp about the view box is the coordinates system. In order to aid in our discourse regarding SVG coordinates we need to add some vocabulary. We describe some terms and then define some relationships using symbols familiar to coders. Using the relationships we can describe some rules to aid us in understanding the coordinates and ultimately obtaining the desired results for the placement and scaling of our graphics.
  
      LET Wvp = SVG(ViewPort) width attribute value
      LET Hvp = SVG(ViewPort) height attribute value
@@ -85,7 +85,7 @@ The virtual coordinates center will not change, so we can safely add and manipul
 
 #####viewBox Coordinates Center (0,0)
 
-Our viewBox system is movable. It is our understanding of this movement that is key to mastering the coordinates systems. Recall that when our viewBox min-x and min-y properties are set to 0 (or not specified at all) and the height and width are set the same as the SVG, the viewBox reveals the virtual space from the top left corner of the SVG to the right width number of units and down for height number of units. At these settings our viewBox coordinates are setting right on top of our virtual space coordinates as illustrated in figure D above. We also learned that if the width and height of our view box are equal to the SVG, we can use the min-y and min-x properties of the view box to pan our view of virtual space at scale. With these settings our view box takes control of the position within virtual space of our SVG; that is why we refer this SVG as a ViewPort. Our viewBox coordinates are shifted by the values of min-x and min-y and it takes ViewPort with it as illustrated below.
+Our viewBox system is movable. It is our understanding of this movement that is key to mastering the coordinates systems. Recall that when our viewBox min-x and min-y properties are set to 0 (or not specified at all) and the height and width are set the same as the SVG, the viewBox reveals the virtual space from the top left corner of the SVG to the right width number of units and down for height number of units. At these settings our viewBox coordinates are setting right on top of our virtual space coordinates as illustrated in figure D above. We also learned that if the width and height of our view box are equal to the SVG, we can use the min-y and min-x properties of the view box to pan our view of virtual space at scale. With these settings our view box takes control of the position within virtual space of our SVG; that is why we refer this SVG as a ViewPort. Our viewBox coordinates are shifted by the values of min-x and min-y and it takes the ViewPort with it as illustrated below.
 
 ![image view box in virtual space](svgViewBoxCoords1.svg.png)
   
@@ -118,7 +118,10 @@ When we adjust our viewBox width and height proportionately, we can also count o
 
 **Figure G2** Zooming out on VS(0,0) by changing only the width value of the viewBox. Note how only min-x is recalculated to half of Hvb to stay anchored to VS(0,0)
  
-  preserveAspectRatio
+###preserveAspectRatio
+I was going to include this attribute in this tutorial because it is often used with the viewBox, but having explained how the viewBox works to the extent that we have in this article, The preserveAspectRatio element lacks enough relevance to give it attention here. Feel free to check it out on your own. Perhaps I overlooked something. Either way I hope this post assists you with using the viewBox with your SVG's.
 
-###CSS and SVGS
+####Coming up next in this series on SVGS
 ###JavaScript and SVGS
+###CSS and SVGS
+
