@@ -16,7 +16,7 @@
    version="1.1"
    inkscape:version="0.91 r13725"
    sodipodi:docname="svgViewBoxCoordsOffSet.svg"
-   inkscape:export-filename="/data/Projects/markdown/svgViewBoxCoords1.svg.png"
+   inkscape:export-filename="/data/Projects/markdown/svgViewBoxCoordsOffSet.svg.png"
    inkscape:export-xdpi="90.757401"
    inkscape:export-ydpi="90.757401">
   <defs
@@ -277,8 +277,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4142136"
-     inkscape:cx="255.80039"
-     inkscape:cy="193.70635"
+     inkscape:cx="243.42602"
+     inkscape:cy="306.84343"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -312,7 +312,9 @@
        width="498.00897"
        height="398.00897"
        x="0.99552"
-       y="653.35767" />
+       y="653.35767"
+       inkscape:export-xdpi="90.757401"
+       inkscape:export-ydpi="90.757401" />
     <circle
        style="opacity:1;fill:#5b8d24;fill-opacity:1;stroke:none;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="path5417"
@@ -1686,7 +1688,7 @@
          sodipodi:role="line"
          id="tspan5652-2"
          x="278.98325"
-         y="833.09424">min-y=X0+20</tspan></text>
+         y="833.09424">min-y=Y0+20</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#0be7ca;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
@@ -2078,7 +2080,7 @@
          sodipodi:role="line"
          id="tspan5652-2-3"
          x="73.749229"
-         y="932.84735">min-y=X0+0</tspan></text>
+         y="932.84735">min-y=Y0+0</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;opacity:1;fill:#0be7ca;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
