@@ -62,6 +62,8 @@ Probably, the hardest thing to grasp about the view box is the coordinates syste
      LET Hvp = SVG(ViewPort) height attribute value
      LET Wvb = viewBox width value
      LET Hvb = viewBox height value
+     LET Hvs = Height of virtual space
+     LET Wvs = Width of virtual space
      LET VSy(+) = Virtual Space below X axis
      LET VSy(-) = Virtual Space above X axis
      LET VSx(+) = Virtual Space right of the Y axis
@@ -93,28 +95,28 @@ As illustrated above, the viewBox min-x and min-y settings refer to the point wi
 
 ![image view box in virtual space](svgViewBoxCoordsOffSet.svg.png)
 
+**Figure F** Setting a (0,0) reference for virtual space simplifies laying out and navigating our inner SVG's
  
-###Manipulating viewBox coordinates
-When deviate from the one to one relationship between SVG width/height and viewBox width/height we cause variations in the viewBox coordinates system. Lets say we increase the ratio of our viewBox width/height to twice that of the SVG width/height. We will notice that while more virtual space is added to our ViewPort, it is no longer centered in virtual space. We can fix that with our min-x and min-y settings by recalculating their values with the new values for width and height. ```(-(Wvb/2),-(Hvb/2))``` This formula will always position our viewBox coordinates center at the center of virtual space. This makes navigating around virtual space and positioning our elements within virtual space a close to 'normal' experience. Now we can pan our larger view of virtual space easily by offsetting our (0,0) point with positive values to the right of the Y axis and negative values to the left of the Y axis. And our positive values of Y while still reversed will proceed out from the X axis albeit up instead of down and the negative values of Y will extend above the X axis. And when we set the X and Y values of our inner elements, they will be consistently found where expected; exactly X units from the Y axis and Y units from the X axis like they should. As long as we always recalculate our center whenever we change the viewBox width or height, we can be sure everything in virtual space will be found at the expected coordinates with respect to (0,0). We can expect this whether we zoom in by decreasing the viewBox width/height below the SVG width/height or increasing the viewBox width/height values above those of the SVG. We can increase/decrease the viewBox width/height independently of each other and still count on our center of virtual space to be at ```(-(Wvb/2),-(Hvb/2))```.
+####Manipulating viewBox coordinates
+When we deviate from the one to one relationship between SVG width/height and viewBox width/height we cause variations in the viewBox coordinates system. Lets say we increase the ratio of our viewBox width/height to twice that of the SVG width/height. We will notice that while more virtual space is added to our ViewPort, it is no longer centered in virtual space. We can fix that with our min-x and min-y settings by recalculating their values with the new values for width and height. ```(-(Wvb/2),-(Hvb/2))``` This formula will always position our viewBox coordinates center at the center of virtual space. This makes navigating around virtual space and positioning our elements within virtual space close to a 'normal' experience. Now we can pan our larger view of virtual space easily by offsetting our (0,0) point with positive values to the right of the Y axis and negative values to the left of the Y axis. And our positive values of Y while still reversed will proceed out from the X axis albeit up instead of down and the negative values of Y will extend above the X axis. And when we set the X and Y values of our inner elements, they will be consistently found where expected; exactly X units from the Y axis and Y units from the X axis like they should. As long as we always recalculate our center whenever we change the viewBox width or height, we can be sure everything in virtual space will be found at the expected coordinates with respect to (0,0). We can expect this whether we zoom in by decreasing the viewBox width/height below the SVG width/height or increasing the viewBox width/height values above those of the SVG. We can increase/decrease the viewBox width/height independently of each other and still count on our center of virtual space to be at ```(-(Wvb/2),-(Hvb/2))```.
  
 When we adjust our viewBox width and height proportionately, we can also count on the boundaries of virtual XY that is viewable within our viewport to also be consistent. ```Xmin = -(Wvb/2), Xmax = Wvb/2, Ymin = -(Hvb/2), Ymax = Hvb/2```. However, when we change the values of Wvb and Hvb independently of each other, the rules governing the bounds of our virtual space become a little more complex. We will, instead need to apply these rules to obtain the boundary limitations of our viewBox.
 
     Wvb/Wvp > Hvb/Hvp ? Hvs = Wvb/Wvp * Hvp : Wvs = Hvb/Hvp * Wvp
  
- In case you are unfamiliar with ternary conditions, I will put this in words here as well. W
+ In case you are unfamiliar with ternary conditions, I will put this in words here as well. When the ratio of Wvb/Wvp is greater than the ratio of Hvb/Hvp then Hvs will be Wvb/Wvp * Hvp. When the ratio of Wvb/Wvp is less that the ratio of Hvb/Hvp then Wvs = Hvb/Hvp * Wvp. In each case the larger ratio does not need any special calculation and the length of its axis will simply be equal to its vb value.
  
- If we increase the height of the view box alone, then the boundaries of the height are calculated as normal, but the boundaries of the width become ```-Xmax = Wvb + ((Wvb - Hvb)/2)```. If we increase only the width of our viewBox then the boundaries of the width are calculated as normal, but the boundaries of the height become ```((Hvb - Wvb)/2)```.
+ If we do not maintain the aspect ratio of the SVG viewport in defining the viewBox, The viewBox will auto adjust our settings by doing the following: Determine which is larger Wvb/Wsvg or Hvb/Hsvg. The larger of the two will be used as the basis for calculating changes to the smaller in order to maintain the aspect ratio. So it is the larger ratio of vb/vp that determines the scale of our SVG or as I like to put it, the area of virtual space in our viewport. Remember that the calculation gives the total length, so it is the (total length/2) that gives us our absolute totals for each side of the axis.
+ 
+ Knowing this, we may choose to simply change the value of Hvb or Wvb alone when zooming in and out of virtual space. The Following illustrations show the results of using just Wvb zoom in and out of virtual space. Note that because we do not change Hvb, we do not need to recalculate min-y values to maintain our center reference.
+ 
+![image view box in virtual space](svgViewBoxWidthOnly.svg.png)
 
-When the height of the viewBox is increased above Hsvg while leaving the width equal to the SVG width, the width of virtual space will automatically be adjusted to maintain the aspect ratio using the formula ```Wvs = Hvb/Hsvg * Wsvg```. Units will be evenly divided between the negative and positive sides of X.
+**Figure G1** Zooming in on (0,0) in virtual space
 
-When the height of the viewBox is reduced below Hsvg while leaving the width equal to the SVG width, there is no change to Hvs or Wvs. Only the center point of Y is affected. Recalculating the value for min-y (min-y = Hvb/2) will re-center the virtual space as always.
+![image view box in virtual space](svgViewBoxWidthOnly2.svg.png)
 
-When the width of the viewBox is increased above Wsvg while leaving the height equal to Hsvg, the height of virtual space will be automatically adjusted to maintain the aspect ratio using the formula ```Hvs = Wvb/Wsvg * Hsvg```. Units will be evenly divided between the negative and positive sides of Y.
-
-When the width of the viewBox is reduced below Wsvg while leaving the height equal to the SVG height, there is no change to Wvs or Hvs. Only the center point of X is affected. Recalculating the value for min-x (min-x = Wvb/2) will re-center the virtual space as always.
-
-If we do not maintain the aspect ratio of the SVG viewport in defining the viewBox, The viewBox will auto adjust our settings by doing the following: Determine which is larger Wvb/Wsvg or Hvb/Hsvg. The larger of the two will be used as the basis for calculating changes to the smaller in order to maintain the aspect ratio. So it is the larger ratio of vb/svg that determines the scale of our SVG or as I like to put it, the area of virtual space in our viewport.
-
+**Figure G2** Zooming out on VS(0,0) by changing only the width value of the viewBox. Note how only min-x is recalculated to half of Hvb to stay anchored to VS(0,0)
  
   preserveAspectRatio
 
