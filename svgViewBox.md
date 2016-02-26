@@ -1,5 +1,5 @@
 #Whats Behind the SVG viewBox?
-A tutorial on the SVG viewBox *(a second in a series concerning SVGs)*
+A tutorial on the SVG viewBox *(a second in a series concerning SVGs, the first can be found [here](https://www.linkedin.com/pulse/coding-basic-svgs-dale-corns))*
 
 *Given the lack of resources available on the subject, writing a tutorial on the viewBox proved to be somewhat of a challenge. It required quite a bit of experimentation and analysis on my part. I hope that by reading this post you will save yourself quite a bit of time implementing the view box in your projects.*
 
@@ -64,11 +64,7 @@ Probably, the hardest thing to grasp about the view box is the coordinates syste
      LET Hvb = viewBox height value
      LET Hvs = Height of virtual space
      LET Wvs = Width of virtual space
-     LET VSy(+) = Virtual Space below X axis
-     LET VSy(-) = Virtual Space above X axis
-     LET VSx(+) = Virtual Space right of the Y axis
-     LET VSx(-) = Virtual Space left of the Y axis
-     
+
 The first thing to recognize about the coordinates system with SVG's is that it is not a coordinates system. It is the coordinates system**s**. The first coordinates system is that of the outer SVG(ViewPort) and the second is the coordinates of the virtual space. I suppose we could refer to more coordinates systems within systems as we nest SVG elements but I think it is best to leave that out of this tutorial. So for our purposes we are concerned with just one outer SVG(ViewPort).
 
 ####Which way is up? 
@@ -121,7 +117,11 @@ When we adjust our viewBox width and height proportionately, we can also count o
 ###preserveAspectRatio
 I was going to include this attribute in this tutorial because it is often used with the viewBox, but having explained how the viewBox works to the extent that we have in this article, I feel that the preserveAspectRatio element lacks enough relevance to give it attention here. Feel free to check it out on your own. Perhaps I overlooked something. Either way I hope this post assists you with using the viewBox with your SVG's.
 
-####Coming up next in this series on SVGS
-###JavaScript and SVGS
-###CSS and SVGS
+###Coming up next in this series on SVGS
+####JavaScript and SVGS
+####CSS and SVGS
+
+<div class="footer">
+    &copy; 2016 Dale Corns
+</div>
 
